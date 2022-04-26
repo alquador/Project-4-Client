@@ -74,6 +74,13 @@ const App = () => {
                 <ChangePassword msgAlert={msgAlert} user={user} />
               </RequireAuth>}
           />
+		  	<Route
+				path='/addProfile'
+				element={
+					<RequireAuth user={user}>	
+						<CreateProfile msgAlert={msgAlert} user={user} />
+					</RequireAuth>}
+			/>
 				</Routes>
 				{msgAlerts.map((msgAlert) => (
 					<AutoDismissAlert

@@ -19,12 +19,13 @@ const IndexProfiles = (props) => {
         //api call to get all the adventures
         getAllProfiles()
             .then(res => {
-                // console.log('res.data.adventures', res.data.adventures)
+                console.log(res.data.profiles)
                 setProfiles(res.data.profiles)
             })
             .catch(console.error)
     }, [])
 
+    
     //loading screen while api call happens
     if (!profiles) {
         return <p>loading...</p>

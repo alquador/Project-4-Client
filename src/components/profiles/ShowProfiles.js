@@ -3,7 +3,7 @@ import { getOneProfile, removeProfile, updateProfile } from '../../api/profiles'
 import { useParams, useNavigate } from 'react-router-dom'
 import { Spinner, Container, Card, Button, Row, Col } from 'react-bootstrap'
 import EditProfileModal from './EditProfileModal'
-import axios from 'axios'
+
 
 const ShowProfiles = (props) => {
 // setting state here
