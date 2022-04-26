@@ -8,6 +8,20 @@ const linkStyle = {
 }
 const authenticatedOptions = (
 	<>
+		<Navbar.Brand>
+			<Link to='/profiles' className= 'm-2' style={linkStyle}>
+				pladateApp
+			</Link>
+        </Navbar.Brand>	
+		<Nav.Item className="m-2">
+			<Link  to='/profiles' style={linkStyle}>All Profiles</Link>
+		</Nav.Item>
+		<Nav.Item className="m-2">
+		    <Link to='addProfile' style={linkStyle}>Add Profile</Link>
+        </Nav.Item>
+		<Nav.Item className="m-2">
+		    <Link to='/profiles/mine' style={linkStyle}>My Profiles</Link>
+        </Nav.Item>
 		<Nav.Item>
 			<Link to='change-password' style={linkStyle}>
 				Change Password
@@ -44,11 +58,6 @@ const alwaysOptions = (
 
 const Header = ({ user }) => (
 	<Navbar bg='primary' variant='dark' expand='md'>
-		<Navbar.Brand>
-            <Link to='/' style={linkStyle}>
-                react-auth-template
-            </Link>
-        </Navbar.Brand>
 		<Navbar.Toggle aria-controls='basic-navbar-nav' />
 		<Navbar.Collapse id='basic-navbar-nav'>
 			<Nav className='ml-auto'>

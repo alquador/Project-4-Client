@@ -20,14 +20,15 @@ import OwnersProfiles from './components/profiles/OwnersProfiles';
 
 const App = () => {
 
-  const [user, setUser] = useState(null)
-  const [msgAlerts, setMsgAlerts] = useState([])
+	const [user, setUser] = useState(null)
+	const [msgAlerts, setMsgAlerts] = useState([])
 
-  console.log('user in app', user)
-  console.log('message alerts', msgAlerts)
-  const clearUser = () => {
-    console.log('clear user ran')
-    setUser(null)
+	console.log('user in app', user)
+	// console.log('setting the token', token)
+	console.log('message alerts', msgAlerts)
+	const clearUser = () => {
+		console.log('clear user ran')
+		setUser(null)
   }
 
 	const deleteAlert = (id) => {
@@ -50,7 +51,7 @@ const App = () => {
 				<Header user={user} />
 				<Routes>
 					<Route path='/' element={<Home msgAlert={msgAlert} user={user} />} />
-					<Route path='/profiles' element={<IndexProfiles msgAlert={msgAlert} user={user} />} />
+					{/* <Route path='/profiles' element={<IndexProfiles msgAlert={msgAlert} user={user} />} /> */}
 					<Route
 						path='/sign-up'
 						element={<SignUp msgAlert={msgAlert} setUser={setUser} />}
@@ -74,6 +75,12 @@ const App = () => {
                 <ChangePassword msgAlert={msgAlert} user={user} />
               </RequireAuth>}
           />
+		  	<Route 
+			  path='/profiles' 
+			  element={
+			  	<IndexProfiles msgAlert={msgAlert} user={user} />} 
+
+			/>
 		  	<Route
 				path='/addProfile'
 				element={

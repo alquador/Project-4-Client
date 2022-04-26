@@ -56,7 +56,7 @@ const MyProfiles = (props) => {
                     <Card.Header>{profile.name} </Card.Header>
                     <Card.Body>
                         <Card.Text>
-                            <Link className='viewProfile' to={`/profiles/${profile._id}/`}>View {profile.type}</Link>
+                            <Link className='viewProfile' to={`/profiles/${profile._id}/`}>View {profile.name}</Link>
                         </Card.Text>
                     </Card.Body>
                     <Card.Footer>

@@ -25,6 +25,9 @@ export const signIn = (credentials) => {
 				password: credentials.password,
 			},
 		},
+		// headers: {
+		// 	Authorization: `Token token=${user.token}`,
+		// },
 	})
 }
 

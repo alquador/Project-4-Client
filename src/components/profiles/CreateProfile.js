@@ -19,14 +19,14 @@ const CreateProfile = (props) => {
         setProfile(prevProfile => {
             const name = e.target.name
             let value = e.target.value
-            console.log('etarget type', e.target.type)
+            //console.log('etarget type', e.target.type)
             if (e.target.type === 'number') {
                 value = parseInt(e.target.value)
             } 
             const updatedValue = { [name]: value }
 
-            console.log('prevProfile', prevProfile)
-            console.log('updatedValue', updatedValue)
+            //console.log('prevProfile', prevProfile)
+            //console.log('updatedValue', updatedValue)
 
             return {...prevProfile, ...updatedValue}
         })

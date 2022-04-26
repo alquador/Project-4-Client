@@ -18,8 +18,13 @@ const SignIn = (props) => {
 	// }
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
-
     const navigate = useNavigate()
+
+	// const [token, setToken] = useState()
+	// if(!token) {
+	// 	return <SignIn setToken={setToken} />
+	//   }
+    
 
 	// handleChange = (event) =>
 	// 	this.setState({
