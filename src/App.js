@@ -12,6 +12,11 @@ import SignUp from './components/auth/SignUp'
 import SignIn from './components/auth/SignIn'
 import SignOut from './components/auth/SignOut'
 import ChangePassword from './components/auth/ChangePassword'
+import CreateProfile from './components/profiles/CreateProfile'
+import ShowProfiles from './components/profiles/ShowProfiles'
+import MyProfiles from './components/profiles/MyProfiles'
+import IndexProfiles from './components/profiles/IndexProfiles'
+import OwnersProfiles from './components/profiles/OwnersProfiles';
 
 const App = () => {
 
@@ -45,6 +50,7 @@ const App = () => {
 				<Header user={user} />
 				<Routes>
 					<Route path='/' element={<Home msgAlert={msgAlert} user={user} />} />
+					<Route path='/profiles' element={<IndexProfiles msgAlert={msgAlert} user={user} />} />
 					<Route
 						path='/sign-up'
 						element={<SignUp msgAlert={msgAlert} setUser={setUser} />}

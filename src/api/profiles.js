@@ -3,13 +3,13 @@ import axios from 'axios'
 
 // index function
 export const getAllProfiles = () => {
-    return axios(`${apiUrl}/profiles`)
+    return axios(`${apiUrl}/profiles/`)
 }
 
 // index of user's profiles function
 export const getMyProfiles = (user) => {
     return axios({
-        url: `${apiUrl}/profiles/mine`,
+        url: `${apiUrl}/profiles/mine/`,
         method: 'GET',
         headers: {
             Authorization: `Token token=${user.token}`
@@ -19,12 +19,12 @@ export const getMyProfiles = (user) => {
 
 //index of a specific user's profiles function
 export const getOwnerProfiles = (ownerId) => {
-    return axios(`${apiUrl}/profiles/user/${ownerId}`)
+    return axios(`${apiUrl}/profiles/user/${ownerId}/`)
 }
 
 //show function
 export const getOneProfile = (profileId) => {
-    return axios(`${apiUrl}/profiles/${profileId}`)
+    return axios(`${apiUrl}/profiles/${profileId}/`)
 }
 
 // POST -> create function
@@ -32,7 +32,7 @@ export const createProfile = (user, newProfile) => {
     console.log('user', user)
     console.log('this is newProfile', newProfile)
     return axios({
-        url: `${apiUrl}/profiles`,
+        url: `${apiUrl}/profiles/`,
         method: 'POST',
         headers: {
             Authorization: `Token token=${user.token}`
@@ -46,7 +46,7 @@ export const updateProfile = (user, updatedProfile) => {
     console.log('user', user)
     console.log('this is updatedProfile', updatedProfile)
     return axios({
-        url: `${apiUrl}/profiles/${updatedProfile._id}`,
+        url: `${apiUrl}/profiles/${updatedProfile._id}/`,
         method: 'PATCH',
         headers: {
             Authorization: `Token token=${user.token}`
@@ -59,7 +59,7 @@ export const updateProfile = (user, updatedProfile) => {
 export const removeProfile = (user, profileId) => {
     console.log('user', user)
     return axios({
-        url: `${apiUrl}/profiles/${profileId}`,
+        url: `${apiUrl}/profiles/${profileId}/`,
         method: 'DELETE',
         headers: {
             Authorization: `Token token=${user.token}`
