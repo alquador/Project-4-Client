@@ -25,9 +25,6 @@ export const signIn = (credentials) => {
 				password: credentials.password,
 			},
 		},
-		// headers: {
-		// 	Authorization: `Token token=${user.token}`,
-		// },
 	})
 }
 
@@ -43,10 +40,10 @@ export const signOut = (user) => {
 
 export const changePassword = (passwords, user) => {
 	return axios({
-		url: apiUrl + '/change-password/',
+		url: apiUrl + '/change-pw/',
 		method: 'PATCH',
 		headers: {
-			Authorization: `Token token=${user.token}`,
+			Authorization: `Token ${user.token}`,
 		},
 		data: {
 			passwords: {

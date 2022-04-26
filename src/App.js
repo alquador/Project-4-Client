@@ -22,7 +22,7 @@ const App = () => {
 
 	const [user, setUser] = useState(null)
 	const [msgAlerts, setMsgAlerts] = useState([])
-
+	// const [token, setToken] = useState(null)
 	console.log('user in app', user)
 	// console.log('setting the token', token)
 	console.log('message alerts', msgAlerts)
@@ -51,7 +51,7 @@ const App = () => {
 				<Header user={user} />
 				<Routes>
 					<Route path='/' element={<Home msgAlert={msgAlert} user={user} />} />
-					{/* <Route path='/profiles' element={<IndexProfiles msgAlert={msgAlert} user={user} />} /> */}
+					<Route path='/profiles' element={<IndexProfiles msgAlert={msgAlert} user={user} />} />
 					<Route
 						path='/sign-up'
 						element={<SignUp msgAlert={msgAlert} setUser={setUser} />}
@@ -75,17 +75,27 @@ const App = () => {
                 <ChangePassword msgAlert={msgAlert} user={user} />
               </RequireAuth>}
           />
-		  	<Route 
-			  path='/profiles' 
-			  element={
-			  	<IndexProfiles msgAlert={msgAlert} user={user} />} 
 
-			/>
 		  	<Route
 				path='/addProfile'
 				element={
 					<RequireAuth user={user}>	
 						<CreateProfile msgAlert={msgAlert} user={user} />
+					</RequireAuth>}
+			/>
+			<Route
+				path='/profiles/:id'
+				element={<ShowProfiles msgAlert={msgAlert} user={user} />}
+			/>
+			<Route
+				path='/profiles/user/:ownerId'
+				element={<OwnersProfiles user={user} />}
+			/>
+			<Route
+				path='/profiles/mine'
+				element={
+					<RequireAuth user={user}>
+						<MyProfiles msgAlert={msgAlert} user={user} />
 					</RequireAuth>}
 			/>
 				</Routes>

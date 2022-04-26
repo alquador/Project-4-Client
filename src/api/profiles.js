@@ -2,9 +2,17 @@ import apiUrl from '../apiConfig'
 import axios from 'axios'
 
 // index function
-export const getAllProfiles = () => {
-    return axios(`${apiUrl}/profiles/`)
+export const getAllProfiles = (user) => {
+    console.log('user in get all profiles', user)
+    return axios({
+        url: `${apiUrl}/profiles/`,
+        method: 'GET',
+        headers: {
+            Authorization: `Token ${user.token}`
+        }
+    })
 }
+
 
 // index of user's profiles function
 export const getMyProfiles = (user) => {
@@ -12,7 +20,7 @@ export const getMyProfiles = (user) => {
         url: `${apiUrl}/profiles/mine/`,
         method: 'GET',
         headers: {
-            Authorization: `Token token=${user.token}`
+            Authorization: `Token ${user.token}`
         }
     })
 }
@@ -35,7 +43,7 @@ export const createProfile = (user, newProfile) => {
         url: `${apiUrl}/profiles/`,
         method: 'POST',
         headers: {
-            Authorization: `Token token=${user.token}`
+            Authorization: `Token ${user.token}`
         },
         data: { profile: newProfile }
     })
@@ -49,7 +57,7 @@ export const updateProfile = (user, updatedProfile) => {
         url: `${apiUrl}/profiles/${updatedProfile._id}/`,
         method: 'PATCH',
         headers: {
-            Authorization: `Token token=${user.token}`
+            Authorization: `Token ${user.token}`
         },
         data: { profile: updatedProfile }
     })
@@ -62,7 +70,7 @@ export const removeProfile = (user, profileId) => {
         url: `${apiUrl}/profiles/${profileId}/`,
         method: 'DELETE',
         headers: {
-            Authorization: `Token token=${user.token}`
+            Authorization: `Token ${user.token}`
         }
     })
 }

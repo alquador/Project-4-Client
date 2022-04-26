@@ -12,7 +12,7 @@ export const getMyInvites = (user) => {
         url: `${apiUrl}/invites/mine/`,
         method: 'GET',
         headers: {
-            Authorization: `Token token=${user.token}`
+            Authorization: `Token ${user.token}`
         }
     })
 }
@@ -35,7 +35,7 @@ export const createInvite = (user, newInvite) => {
         url: `${apiUrl}/invites/`,
         method: 'POST',
         headers: {
-            Authorization: `Token token=${user.token}`
+            Authorization: `Token ${user.token}`
         },
         data: { invite: newInvite }
     })
@@ -49,7 +49,7 @@ export const updateInvite = (user, updatedInvite) => {
         url: `${apiUrl}/invites/${updatedInvite._id}/`,
         method: 'PATCH',
         headers: {
-            Authorization: `Token token=${user.token}`
+            Authorization: `Token ${user.token}`
         },
         data: { invite: updatedInvite }
     })
@@ -62,7 +62,7 @@ export const removeInvite = (user, inviteId) => {
         url: `${apiUrl}/invites/${inviteId}/`,
         method: 'DELETE',
         headers: {
-            Authorization: `Token token=${user.token}`
+            Authorization: `Token ${user.token}`
         }
     })
 }
