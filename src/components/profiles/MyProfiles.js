@@ -16,7 +16,7 @@ const MyProfiles = (props) => {
     const {user} = props
 
     useEffect(() => {
-        console.log('user id', user._id)
+        console.log('user id', user.id)
         //api call to get all profiles made by the current user
         getMyProfiles(user)
             .then(res => {

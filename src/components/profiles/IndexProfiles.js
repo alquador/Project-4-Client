@@ -43,13 +43,13 @@ const IndexProfiles = (props) => {
                     <Card.Header>Age: {profile.age} </Card.Header>
                     <Card.Body>
                         <Card.Text>
-                            <Link className='viewProfile' to={`/profiles/${profile._id}`}>View {profile.name}</Link>
+                            <Link className='viewProfile' to={`/profiles/${profile.id}`}>View {profile.name}</Link>
                         </Card.Text>
                     </Card.Body>
                     <Card.Footer>
                         {/* link to all profiles made by a specific user */}
                         <span>Send Invite To: </span>
-                        <Link to={`/profiles/user/${profile.user_id}`}>{profile.name}</Link>
+                        <Link to={`/profiles/${user.id}`}>{profile.name}</Link>
                     </Card.Footer>
                 </Card>
             )

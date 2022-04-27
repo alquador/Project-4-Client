@@ -23,8 +23,9 @@ const ShowProfiles = (props) => {
     // put updated in the array so that the page will re-render every time we make an update and trigger the trigger refresh function
     useEffect(() => {
         console.log('id in showProfiles useEffect', id)
+        console.log('user in showProfile useEffect', user)
         //calls the api to get a specific profile
-        getOneProfile(id)
+        getOneProfile(user, id)
             .then(res => {
                 console.log('Show profile res data', res.data.profile)
                 setProfile(res.data.profile)
@@ -50,7 +51,7 @@ const ShowProfiles = (props) => {
         )
     }
 
-    if(profile.name){
+    // if(profile.name){
         return (
             <>
             <Container className="fluid" id="showContainer">
@@ -62,17 +63,17 @@ const ShowProfiles = (props) => {
                             <Card.Text>
                             <Row>
                                 <Col>
-                                    <small>Type: {profile.age}</small><br/>
+                                    <small>Age: {profile.age}</small><br/>
                                 </Col>
                                 <Col>
-                                    <small>Time: {profile.aboutMe} Minutes</small><br/>
+                                    <small>About Me: {profile.aboutMe} </small><br/>
                                 </Col>
                             </Row>
                         </Card.Text>
                         
                     </Card.Body>
                     {/* if the user owns this profile allow them to edit, or delete it */}
-                    {profile.owner === user._id && 
+                    {profile.owner === user.id && 
                     <Card.Footer>
 
                             <Button onClick={() => setModalOpen(true)} className="m-2" variant="warning">
@@ -99,7 +100,7 @@ const ShowProfiles = (props) => {
             </>
         )
 
-    }
+    // }
 }
 
 export default ShowProfiles

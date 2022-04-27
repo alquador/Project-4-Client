@@ -30,10 +30,11 @@ export const getOwnerProfiles = (ownerId) => {
 }
 
 //show function
-export const getOneProfile = (profileId, user) => {
-    console.log('profile id in the axios call', profileId)
+export const getOneProfile = (user, profileId) => {
+    //console.log('profile id in the axios call', profileId)
     console.log('user in the axios call', user)
     return axios({
+        //searching for the profile by the user_id fk
         url: `${apiUrl}/profiles/${profileId}/`,
         method: 'GET',
         headers: {
