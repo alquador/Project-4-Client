@@ -2,6 +2,10 @@ import React, { useState, useEffect } from 'react'
 import { getAllProfiles } from '../../api/profiles'
 import { Card } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
+// import { Route } from 'react-router-dom'
+// import { v4 as uuid } from 'uuid'
+// import RequireAuth from './components/shared/RequireAuth'
+// import CreateInvite from './components/invites/CreateInvite'
 
 
 // use basic CSS, but we have to use JS syntax
@@ -14,6 +18,16 @@ const cardContainerLayout = {
 const IndexProfiles = (props) => {
     const [profiles, setProfiles] = useState(null)
     const {user} = props
+    // const [msgAlerts, setMsgAlerts] = useState([])
+
+    // const msgAlert = ({ heading, message, variant }) => {
+	// 	const id = uuid()
+	// 	setMsgAlerts(() => {
+	// 		return (
+	// 			[{ heading, message, variant, id }]
+    //   )
+	// 	})
+	// }
 
     useEffect(() => {
         //api call to get all profiles
@@ -47,9 +61,15 @@ const IndexProfiles = (props) => {
                         </Card.Text>
                     </Card.Body>
                     <Card.Footer>
-                        {/* link to all profiles made by a specific user */}
+                        {/* link to create an invite */}
                         <span>Send Invite To: </span>
-                        <Link to={`/profiles/${user.id}`}>{profile.name}</Link>
+                        {/* <Route
+				            path='/addInvite'
+				            element={
+					            <RequireAuth user={user}>	
+						            <CreateInvite msgAlert={msgAlert} user={user} />
+					            </RequireAuth>}
+			/> */}
                     </Card.Footer>
                 </Card>
             )

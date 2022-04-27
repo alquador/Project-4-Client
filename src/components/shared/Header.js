@@ -14,6 +14,9 @@ const authenticatedOptions = (
 			</Link>
 		</Nav.Link>
 		<Nav.Item className="m-2">
+		    <Link to='addInvite' style={linkStyle}>Add Invite</Link>
+        </Nav.Item>
+		<Nav.Item className="m-2">
 			<Link  to='/profiles' style={linkStyle}>All Profiles</Link>
 		</Nav.Item>
 		<Nav.Item className="m-2">

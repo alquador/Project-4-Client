@@ -5,7 +5,7 @@ import InviteForm from '../shared/InviteForm'
 const EditInviteModal = (props) => {
     const { user, show, handleClose, updateInvite, triggerRefresh } = props
     const [invite, setInvite] = useState(props.invite)
-
+    console.log('props.invite in edit invite modal', props.invite)
     const handleChange = (e) => {
         // e === event
         e.persist()
@@ -48,7 +48,7 @@ const EditInviteModal = (props) => {
             <Modal.Header closeButton></Modal.Header>
             <Modal.Body>
                 <InviteForm 
-                    invte={invite}
+                    invite={invite}
                     handleChange={handleChange}
                     handleSubmit={handleSubmit}
                     heading="Edit invite!"

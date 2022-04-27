@@ -16,7 +16,7 @@ const ProfileForm = (props) => {
             <Form onSubmit={handleSubmit} className="m-2 p-5 w-100 shadow bg-body rounded">
             <Row>
                 <Col>
-                <Form.Label>Name</Form.Label>
+                <Form.Label className="">Name</Form.Label>
                 <Form.Control 
                     style={{
                         width: '100%',
@@ -52,7 +52,7 @@ const ProfileForm = (props) => {
                         textAlign: 'center'
                     }} 
                     placeholder="Tell us a little bit about the child?"
-                    value={profile.aboutMe}
+                    value={profile.about_me}
                     name='aboutMe'
                     onChange={handleChange}
                 />

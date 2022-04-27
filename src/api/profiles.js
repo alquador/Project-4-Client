@@ -48,7 +48,7 @@ export const createProfile = (user, newProfile) => {
     console.log('user', user)
     console.log('this is newProfile', newProfile)
     return axios({
-        url: `${apiUrl}/profiles/`,
+        url: `${apiUrl}/profiles/create/`,
         method: 'POST',
         headers: {
             Authorization: `Token ${user.token}`
@@ -62,7 +62,7 @@ export const updateProfile = (user, updatedProfile) => {
     console.log('user', user)
     console.log('this is updatedProfile', updatedProfile)
     return axios({
-        url: `${apiUrl}/profiles/${updatedProfile._id}/`,
+        url: `${apiUrl}/profiles/${updatedProfile.id}/`,
         method: 'PATCH',
         headers: {
             Authorization: `Token ${user.token}`
