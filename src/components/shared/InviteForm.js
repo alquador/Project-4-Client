@@ -36,7 +36,7 @@ const InviteForm = (props) => {
                         width: '100%',
                         textAlign: 'center'
                     }}
-                    placeholder="When is the playdate?"
+                    placeholder="When is the playdate? (YYYY-MM-DD)"
                     value={invite.date}
                     name='date'
                     type="date"

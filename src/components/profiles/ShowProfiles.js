@@ -72,7 +72,7 @@ const ShowProfiles = (props) => {
                         
                     </Card.Body>
                     {/* if the user owns this profile allow them to edit, or delete it */}
-                    {profile.owner === user.id && 
+                    {profile.user_id === user.id && 
                     <Card.Footer>
 
                             <Button onClick={() => setModalOpen(true)} className="m-2" variant="warning">
