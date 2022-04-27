@@ -52,7 +52,7 @@ const App = () => {
 				<Header user={user} />
 				<Routes>
 					<Route path='/' element={<Home msgAlert={msgAlert} user={user} />} />
-					<Route path='/profiles' element={<IndexProfiles msgAlert={msgAlert} user={user} />} />
+					<Route path='/profiles/' element={<IndexProfiles msgAlert={msgAlert} user={user} />} />
 					<Route
 						path='/sign-up'
 						element={<SignUp msgAlert={msgAlert} setUser={setUser} />}
@@ -85,7 +85,7 @@ const App = () => {
 					</RequireAuth>}
 			/>
 			<Route
-				path='/profiles/:id'
+				path='/profiles/:id/'
 				element={<ShowProfiles msgAlert={msgAlert} user={user} />}
 			/>
 			<Route

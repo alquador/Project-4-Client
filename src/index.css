@@ -11,3 +11,11 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+Header {
+  background-color: aqua;
+}
+
+.bg-myBlue {
+  background-color: #51b8b8;
+  border-bottom: solid #0d0d0d 2px;
+}

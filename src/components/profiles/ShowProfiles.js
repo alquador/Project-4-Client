@@ -69,7 +69,7 @@ const ShowProfiles = (props) => {
                                 </Col>
                             </Row>
                         </Card.Text>
-                        <h4>Gear:</h4>
+                        
                     </Card.Body>
                     {/* if the user owns this profile allow them to edit, or delete it */}
                     {profile.owner === user._id && 
@@ -87,7 +87,7 @@ const ShowProfiles = (props) => {
                 </Card>
             </Container>
   
-            {/* a pop up to edit the adventure */}
+            {/* a pop up to edit the profile */}
             <EditProfileModal 
             profile = {profile}
             show={modalOpen}
