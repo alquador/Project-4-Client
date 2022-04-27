@@ -17,7 +17,7 @@ const MyProfiles = (props) => {
 
     useEffect(() => {
         console.log('user id', user._id)
-        //api call to get all adventures made by the current user
+        //api call to get all profiles made by the current user
         getMyProfiles(user)
             .then(res => {
                 console.log('res.data', res.data)

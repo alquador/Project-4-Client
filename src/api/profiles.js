@@ -13,7 +13,6 @@ export const getAllProfiles = (user) => {
     })
 }
 
-
 // index of user's profiles function
 export const getMyProfiles = (user) => {
     return axios({
@@ -31,8 +30,15 @@ export const getOwnerProfiles = (ownerId) => {
 }
 
 //show function
-export const getOneProfile = (profileId) => {
-    return axios(`${apiUrl}/profiles/${profileId}/`)
+export const getOneProfile = (user, id) => {
+    console.log('profile id in the axios call', id)
+    return axios({
+        url: `${apiUrl}/profiles/${id}/`,
+        method: 'GET',
+        headers: {
+            Authorization: `Token ${user.token}`
+        }
+    })
 }
 
 // POST -> create function

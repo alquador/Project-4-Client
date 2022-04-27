@@ -16,7 +16,8 @@ import CreateProfile from './components/profiles/CreateProfile'
 import ShowProfiles from './components/profiles/ShowProfiles'
 import MyProfiles from './components/profiles/MyProfiles'
 import IndexProfiles from './components/profiles/IndexProfiles'
-import OwnersProfiles from './components/profiles/OwnersProfiles';
+import OwnersProfiles from './components/profiles/OwnersProfiles'
+import IndexInvites from './components/invites/IndexInvites';
 
 const App = () => {
 
@@ -98,6 +99,7 @@ const App = () => {
 						<MyProfiles msgAlert={msgAlert} user={user} />
 					</RequireAuth>}
 			/>
+			<Route path='/invites' element={<IndexInvites msgAlert={msgAlert} user={user} />} />
 				</Routes>
 				{msgAlerts.map((msgAlert) => (
 					<AutoDismissAlert

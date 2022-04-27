@@ -2,8 +2,15 @@ import apiUrl from '../apiConfig'
 import axios from 'axios'
 
 // index function
-export const getAllInvites = () => {
-    return axios(`${apiUrl}/invites/`)
+export const getAllInvites = (user) => {
+    console.log('user in get all invites', user)
+    return axios({
+        url: `${apiUrl}/invites/`,
+        method: 'GET',
+        headers: {
+            Authorization: `Token ${user.token}`
+        }
+    })
 }
 
 // index of user's invites function

@@ -22,9 +22,11 @@ const ShowProfiles = (props) => {
 
     // put updated in the array so that the page will re-render every time we make an update and trigger the trigger refresh function
     useEffect(() => {
+        console.log('id in showProfiles useEffect', id)
         //calls the api to get a specific profile
         getOneProfile(id)
             .then(res => {
+                console.log('Show profile res data', res.data.profile)
                 setProfile(res.data.profile)
             })
             .catch(console.error)  

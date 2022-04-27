@@ -8,11 +8,11 @@ const linkStyle = {
 }
 const authenticatedOptions = (
 	<>
-		<Navbar.Brand>
-			<Link to='/profiles' className= 'm-2' style={linkStyle}>
-				pladateApp
+		<Nav.Link>
+			<Link to='/invites' style={linkStyle}>
+				Playdate Invites
 			</Link>
-        </Navbar.Brand>	
+		</Nav.Link>
 		<Nav.Item className="m-2">
 			<Link  to='/profiles' style={linkStyle}>All Profiles</Link>
 		</Nav.Item>
