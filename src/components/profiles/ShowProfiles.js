@@ -34,8 +34,8 @@ const ShowProfiles = (props) => {
     }, [updated, id, user])
 
     //delete a profile
-    const removeTheProfile = () => {
-        removeProfile(user, profile._id)
+    const removeTheProfile = (user, id) => {
+        removeProfile(user, id)
             .then(() => {navigate(`/profiles`)})
             .catch(console.error)
     }
