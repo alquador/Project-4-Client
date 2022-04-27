@@ -17,7 +17,8 @@ import ShowProfiles from './components/profiles/ShowProfiles'
 import MyProfiles from './components/profiles/MyProfiles'
 import IndexProfiles from './components/profiles/IndexProfiles'
 import OwnersProfiles from './components/profiles/OwnersProfiles'
-import IndexInvites from './components/invites/IndexInvites';
+import IndexInvites from './components/invites/IndexInvites'
+import ShowInvite from './components/invites/ShowInvite';
 
 const App = () => {
 
@@ -85,7 +86,7 @@ const App = () => {
 					</RequireAuth>}
 			/>
 			<Route
-				path='/profiles/:id/'
+				path='/profiles/:id'
 				element={<ShowProfiles msgAlert={msgAlert} user={user} />}
 			/>
 			<Route
@@ -99,8 +100,16 @@ const App = () => {
 						<MyProfiles msgAlert={msgAlert} user={user} />
 					</RequireAuth>}
 			/>
-			<Route path='/invites' element={<IndexInvites msgAlert={msgAlert} user={user} />} />
-				</Routes>
+			<Route 
+				path='/invites' 
+				element={<IndexInvites msgAlert={msgAlert} user={user} />} 
+
+			/>
+			<Route
+				path='/invites/:id'
+				element={<ShowInvite msgAlert={msgAlert} user={user} />}
+			/>
+			</Routes>
 				{msgAlerts.map((msgAlert) => (
 					<AutoDismissAlert
 						key={msgAlert.id}

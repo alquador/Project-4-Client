@@ -48,7 +48,8 @@ const IndexProfiles = (props) => {
                     </Card.Body>
                     <Card.Footer>
                         {/* link to all profiles made by a specific user */}
-                        <span>Send Invite To:</span><Link to={`/profiles/user/${profile.user_id}`}>{profile.name}</Link>
+                        <span>Send Invite To: </span>
+                        <Link to={`/profiles/user/${profile.user_id}`}>{profile.name}</Link>
                     </Card.Footer>
                 </Card>
             )

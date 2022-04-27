@@ -32,9 +32,10 @@ export const getOwnerProfiles = (ownerId) => {
 //show function
 export const getOneProfile = (profileId, user) => {
     console.log('profile id in the axios call', profileId)
+    console.log('user in the axios call', user)
     return axios({
         url: `${apiUrl}/profiles/${profileId}/`,
-        method: 'SHOW',
+        method: 'GET',
         headers: {
             Authorization: `Token ${user.token}`
         }
