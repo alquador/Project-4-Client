@@ -1,0 +1,61 @@
+import React, { useState } from 'react'
+import {Modal} from 'react-bootstrap'
+import InviteForm from '../shared/InviteForm'
+
+const EditInviteModal = (props) => {
+    const { user, show, handleClose, updateInvite, triggerRefresh } = props
+    const [invite, setInvite] = useState(props.invite)
+
+    const handleChange = (e) => {
+        // e === event
+        e.persist()
+        //sets Invite to the updated value of the input fields
+        setInvite(prevInvite => {
+            const title = e.target.title
+            let value = e.target.value
+            console.log('etarget type', e.target.type)
+            console.log('this is e.target checked', e.target.checked)
+            if (e.target.type === 'number') {
+                value = parseFloat(e.target.value)
+            }
+
+            const updatedValue = { [title]: value }
+
+            console.log('prevInvite', prevInvite)
+            console.log('updatedInvite', updatedValue)
+
+            return {...prevInvite, ...updatedValue}
+        })
+    }
+
+    const handleSubmit = (e) => {
+        // e === event
+        e.preventDefault()
+
+        console.log('the edited invite to submit', invite)
+        //api call to update a invite
+        updateInvite(user, invite)
+            // if create is successful, we should navigate to the show page
+            .then(() => handleClose())
+            .then(() => triggerRefresh())
+            .catch(console.error)
+        console.log('this is the invte after api call', invite)
+    }
+
+    return (
+        //this is the pop up that displays the invite form for editing
+        <Modal show={show} onHide={handleClose}>
+            <Modal.Header closeButton></Modal.Header>
+            <Modal.Body>
+                <InviteForm 
+                    invte={invite}
+                    handleChange={handleChange}
+                    handleSubmit={handleSubmit}
+                    heading="Edit invite!"
+                />
+            </Modal.Body>
+        </Modal>
+    )
+}
+    
+export default EditInviteModal

@@ -18,7 +18,7 @@ import MyProfiles from './components/profiles/MyProfiles'
 import IndexProfiles from './components/profiles/IndexProfiles'
 import OwnersProfiles from './components/profiles/OwnersProfiles'
 import IndexInvites from './components/invites/IndexInvites'
-import ShowInvite from './components/invites/ShowInvite';
+import ShowInvite from './components/invites/ShowInvite'
 
 const App = () => {
 
@@ -29,7 +29,7 @@ const App = () => {
 	// console.log('setting the token', token)
 	console.log('message alerts', msgAlerts)
 	const clearUser = () => {
-		console.log('clear user ran')
+		//console.log('clear user ran')
 		setUser(null)
   }
 

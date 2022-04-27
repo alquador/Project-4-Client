@@ -30,8 +30,17 @@ export const getOwnerInvites = (ownerId) => {
 }
 
 //show function
-export const getOneInvite = (inviteId) => {
-    return axios(`${apiUrl}/invites/${inviteId}/`)
+export const getOneInvite = (user, inviteId) => {
+    console.log('invite id in the axios call', inviteId)
+    console.log('user in the axios call', user)
+    return axios({
+        //searching for the invite by the user_id fk
+        url: `${apiUrl}/invites/${inviteId}/`,
+        method: 'GET',
+        headers: {
+            Authorization: `Token ${user.token}`
+        }
+    })
 }
 
 // POST -> create function

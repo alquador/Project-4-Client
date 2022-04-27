@@ -31,7 +31,7 @@ const ShowProfiles = (props) => {
                 setProfile(res.data.profile)
             })
             .catch(console.error)  
-    }, [updated, id])
+    }, [updated, id, user])
 
     //delete a profile
     const removeTheProfile = () => {
@@ -51,7 +51,6 @@ const ShowProfiles = (props) => {
         )
     }
 
-    // if(profile.name){
         return (
             <>
             <Container className="fluid" id="showContainer">
@@ -66,7 +65,7 @@ const ShowProfiles = (props) => {
                                     <small>Age: {profile.age}</small><br/>
                                 </Col>
                                 <Col>
-                                    <small>About Me: {profile.aboutMe} </small><br/>
+                                    <small>About Me: {profile.about_me} </small><br/>
                                 </Col>
                             </Row>
                         </Card.Text>
@@ -99,8 +98,6 @@ const ShowProfiles = (props) => {
             />
             </>
         )
-
-    // }
 }
 
 export default ShowProfiles

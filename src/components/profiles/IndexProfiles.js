@@ -24,7 +24,7 @@ const IndexProfiles = (props) => {
                 setProfiles(res.data.profiles)
             })
             .catch(console.error)
-    }, [])
+    }, [user])
 
     
     //loading screen while api call happens

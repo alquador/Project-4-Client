@@ -13,18 +13,18 @@ const cardContainerLayout = {
 
 const IndexInvites = (props) => {
     const [invites, setInvites] = useState(null)
-    const {user} = props
+    const { user, host } = props
 
     useEffect(() => {
         //api call to get all invites
         // console.log('user in useEffect console firing', user)
-        getAllInvites(user)
+        getAllInvites(user, host)
             .then(res => {
                 console.log(res.data.invites)
                 setInvites(res.data.invites)
             })
             .catch(console.error)
-    }, [])
+    }, [user, host])
 
     
     //loading screen while api call happens
@@ -43,12 +43,12 @@ const IndexInvites = (props) => {
                     <Card.Header> {invite.title} </Card.Header>
                     <Card.Body>
                         <Card.Text>
-                            <Link className='viewInvite' to={`/invites/${invite._id}`}>View {invite.details}</Link>
+                            <Link className='viewInvite' to={`/invites/${invite.id}`}>View {invite.details}</Link>
                         </Card.Text>
                     </Card.Body>
                     <Card.Footer>
-                        {/* link to all profiles made by a specific user */}
-                        <span>by:</span><Link to={`/profiles/user/${invite.user_id}`}>{invite.accepted}</Link>
+                        {/* link to all invites made by a specific user */}
+                        {/* <span>Accept:</span><Link to={`/invites/${host.id}`}>{invite.accepted}</Link> */}
                     </Card.Footer>
                 </Card>
             )
