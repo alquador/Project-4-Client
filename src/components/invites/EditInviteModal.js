@@ -11,7 +11,7 @@ const EditInviteModal = (props) => {
         e.persist()
         //sets Invite to the updated value of the input fields
         setInvite(prevInvite => {
-            const title = e.target.title
+            const name = e.target.name
             let value = e.target.value
             console.log('etarget type', e.target.type)
             console.log('this is e.target checked', e.target.checked)
@@ -19,7 +19,7 @@ const EditInviteModal = (props) => {
                 value = parseFloat(e.target.value)
             }
 
-            const updatedValue = { [title]: value }
+            const updatedValue = { [name]: value }
 
             console.log('prevInvite', prevInvite)
             console.log('updatedInvite', updatedValue)

@@ -2,8 +2,8 @@ import { Form, Container, Button, Row, Col } from 'react-bootstrap'
 
 const InviteForm = (props) => {
     const {invite, handleChange, handleSubmit, heading} = props
-    console.log('invite in invite form', invite)
-    console.log('props in invite form', props)
+    //console.log('invite in invite form', invite)
+    //console.log('props in invite form', props)
     return (
         <Container className="justify-content-center" style={{
             display: 'flex',
@@ -24,7 +24,7 @@ const InviteForm = (props) => {
                         textAlign: 'center'
                     }}
                     placeholder="What Is The Title Of The Playdate?"
-                    value={props.invite.title}
+                    value={invite.title}
                     name='title'
                     onChange={handleChange}
                 />

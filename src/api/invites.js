@@ -62,7 +62,7 @@ export const updateInvite = (user, updatedInvite) => {
     console.log('user', user)
     console.log('this is updatedInvite', updatedInvite)
     return axios({
-        url: `${apiUrl}/invites/${updatedInvite._id}/`,
+        url: `${apiUrl}/invites/${updatedInvite.id}/`,
         method: 'PATCH',
         headers: {
             Authorization: `Token ${user.token}`
