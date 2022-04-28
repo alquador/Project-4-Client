@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import { getMyProfiles } from '../../api/profiles'
-import { Card, Spinner, Container } from 'react-bootstrap'
+import { Card } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 
 
+// use basic CSS, but we have to use JS syntax
 const cardContainerLayout = {
     display: 'flex',
     justifyContent: 'center',
@@ -11,66 +12,75 @@ const cardContainerLayout = {
 }
 
 const MyProfiles = (props) => {
-    const [myProfiles, setMyProfiles] = useState(null)
-
+    const [profiles, setProfiles] = useState(null)
     const {user} = props
+    // const [msgAlerts, setMsgAlerts] = useState([])
+
+    // const msgAlert = ({ heading, message, variant }) => {
+	// 	const id = uuid()
+	// 	setMsgAlerts(() => {
+	// 		return (
+	// 			[{ heading, message, variant, id }]
+    //   )
+	// 	})
+	// }
 
     useEffect(() => {
-        console.log('user id', user.id)
-        //api call to get all profiles made by the current user
+        //api call to get all profiles
+        // console.log('user in useEffect console firing', user)
         getMyProfiles(user)
             .then(res => {
-                console.log('res.data', res.data)
-                setMyProfiles(res.data.profiles)
+                console.log(res.data.profiles)
+                setProfiles(res.data.profiles)
             })
             .catch(console.error)
-            
     }, [user])
 
     
-    if (!myProfiles) {
-        return ( 
-                <Container fluid className='' >
-                    <Spinner animation="border" role="status">
-                        <span className="visually-hidden">Loading...</span>
-                    </Spinner>
-                </Container>
-        )
-    }
-    if (myProfiles.length === 0) {
-        return (
-            <div>
-                <h3> My Profiles</h3>   
-                <p>You have no profiles, go add some!</p>
-            </div>
-        )
+    //loading screen while api call happens
+    if (!profiles) {
+        return <p>loading...</p>
+    } else if (profiles.length === 0) {
+        return <p>no profiles yet, go add some</p>
     }
 
     let profileCards
 
-    if (myProfiles.length > 0) {
-        profileCards = myProfiles.map(profile => {
-               
+    if (profiles) {
+        profileCards = profiles.map(profile => {
+            if (profiles.user_id === user.id)
             return (
                 <Card key={profile._id} style={{width: '30%' }} className="m-2 shadow p-3 mb-5 bg-body rounded">
-                    <Card.Header>{profile.name} </Card.Header>
-                    <Card.Body>
+                    <Card.Header style={{
+                        textAlign: 'center'
+                    }}>Age: {profile.age} </Card.Header>
+                    <Card.Body style={{
+                        textAlign: 'center'
+                    }}>
                         <Card.Text>
-                            <Link className='viewProfile' to={`/profiles/${profile._id}/`}>View {profile.name}</Link>
+                            <Link className='viewProfile' to={`/profiles/${profile.id}`}>View {profile.name}</Link>
                         </Card.Text>
                     </Card.Body>
-                    <Card.Footer>
-                        <span>by:</span><Link to={`/profiles/user/${profile.owner._id}/`}>{profile.owner.email}</Link>
+                    <Card.Footer style={{
+                        textAlign: 'center'
+                    }}>
+                        {/* link to create an invite */}
+                        <span>Schedule Playdate with: </span>
+                            <Link className="invite" to={`/addInvite/`}>{profile.name}</Link>
                     </Card.Footer>
                 </Card>
             )
         })
-    }
+
+        }
 
     return (
         <>
         <br></br>
-           <div className='title'><h1>My Profiles</h1></div>
+            <div className= 'title'>
+                <h1 style={{
+                    textAlign: 'center'
+                }}>My Profiles</h1></div>
             <div style={cardContainerLayout}>
                 {profileCards}
             </div>

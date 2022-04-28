@@ -51,7 +51,7 @@ const ShowInvite = (props) => {
         )
     }
 
-    // if (invite.host_id === user.id || invite.friend_id === user.id){
+     if (user.id === invite.friend_id || invite.host_id === user.id)
         return (
             <>
             <Container className="fluid" id="showContainer">
@@ -69,20 +69,24 @@ const ShowInvite = (props) => {
                                     <small>Time: {invite.time} </small><br/>
                                 </Col>
                             </Row>
+                            <Row>
                                 <Col>
                                     <small>Location: {invite.location} </small><br/>
                                 </Col>
                                 <Col>
                                     <small>Details: {invite.details} </small><br/>
                                 </Col>
-                                <Col>
-                                    <small>Accepted: {invite.accepted} </small><br/>
-                                </Col>
+                            </Row>
+                            <Row>
                                 <Col>
                                     <small>Playdate Host: {invite.host_id} </small><br/>
                                 </Col>
                                 <Col>
                                     <small>Playdate Friend: {invite.friend_id} </small><br/>
+                                </Col>
+                            </Row>
+                                <Col>
+                                    <small>Accepted: {invite.accepted} </small><br/>
                                 </Col>
                         </Card.Text>
                     
@@ -90,7 +94,9 @@ const ShowInvite = (props) => {
                     
                     {/* if the user owns this profile allow them to edit, or delete it */}
                     {invite.host_id === user.id && 
-                    <Card.Footer>
+                    <Card.Footer style={{
+                        textAlign: 'center'
+                    }}>
 
                             <Button onClick={() => setModalOpen(true)} className="m-2" variant="warning">
                                 Edit Invite

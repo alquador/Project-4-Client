@@ -15,8 +15,7 @@ const InviteForm = (props) => {
             <h1>{heading}</h1>
             <br></br>
             <Form onSubmit={handleSubmit} className="m-2 p-5 w-100 shadow bg-body rounded">
-            <Row>
-                <Col>
+            <Col>
                 <Form.Label>Playdate: </Form.Label>
                 <Form.Control 
                     style={{
@@ -29,35 +28,36 @@ const InviteForm = (props) => {
                     onChange={handleChange}
                 />
                 </Col>
+            <Row>
                 <Col>
-                
-                <Form.Label>Date: </Form.Label>
-                <Form.Control 
-                    style={{
+                    <Form.Label>Date: </Form.Label>
+                    <Form.Control 
+                        style={{
+                            width: '100%',
+                            textAlign: 'center'
+                        }}
+                        placeholder="When is the playdate? (YYYY-MM-DD)"
+                        value={invite.date}
+                        name='date'
+                        type="date"
+                        onChange={handleChange}
+                />
+                </Col>
+                <Col>
+                    <Form.Label>Time: </Form.Label>
+                    <Form.Control
+                        style={{
                         width: '100%',
                         textAlign: 'center'
-                    }}
-                    placeholder="When is the playdate? (YYYY-MM-DD)"
-                    value={invite.date}
-                    name='date'
-                    type="date"
-                    onChange={handleChange}
+                     }} 
+                        placeholder="What time?"
+                        value={invite.time}
+                        name='time'
+                        type="time"
+                        onChange={handleChange}
                 />
-                
                 </Col>
             </Row>
-                <Form.Label>Time: </Form.Label>
-                <Form.Control
-                    style={{
-                        width: '100%',
-                        textAlign: 'center'
-                    }} 
-                    placeholder="What time?"
-                    value={invite.time}
-                    name='time'
-                    type="time"
-                    onChange={handleChange}
-                />
                 <Form.Label>Location: </Form.Label>
                 <Form.Control
                     style={{
@@ -69,6 +69,8 @@ const InviteForm = (props) => {
                     name='location'
                     onChange={handleChange}
                 />
+                <br></br>
+                <Form.Label>Details: </Form.Label>
                 <Form.Control
                     style={{
                         width: '100%',
@@ -79,7 +81,21 @@ const InviteForm = (props) => {
                     name='details'
                     onChange={handleChange}
                 />
-           
+                <br></br>
+                <div style={{
+                    justifyContent: 'center',
+                    textAlign: 'left'
+                }}>
+                {['checkbox'].map((type) => (
+                    <div key={`default-${type}`} className="mb-3">
+                        <Form.Check 
+                            type={type}
+                            id={invite.accepted}
+                            label={`Accept Invite`}
+                        />
+                    </div>
+                ))}
+                </div>
                 <Button type='submit'>Submit</Button>
             </Form>
         </Container>

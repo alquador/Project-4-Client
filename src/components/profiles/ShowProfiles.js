@@ -58,23 +58,24 @@ const ShowProfiles = (props) => {
                         <Card.Header><h2 style={{
                             textAlign: 'center'
                         }}>{profile.name}</h2></Card.Header>
-                        <Card.Body>
+                        <Card.Body style={{
+                            textAlign: 'center'
+                        }}>
                             <Card.Text>
-                            <Row>
                                 <Col>
                                     <small>Age: {profile.age}</small><br/>
                                 </Col>
                                 <Col>
                                     <small>About Me: {profile.about_me} </small><br/>
                                 </Col>
-                            </Row>
                         </Card.Text>
                         
                     </Card.Body>
                     {/* if the user owns this profile allow them to edit, or delete it */}
                     {profile.user_id === user.id && 
-                    <Card.Footer>
-
+                    <Card.Footer style={{
+                        textAlign: 'center'
+                    }}>
                             <Button onClick={() => setModalOpen(true)} className="m-2" variant="warning">
                                 Edit Profile
                             </Button>

@@ -45,17 +45,16 @@ const IndexInvites = (props) => {
                 
                 <Card key={invite._id} style={{width: '30%' }} className="m-2 shadow p-3 mb-5 bg-body rounded">
                     
-                    <Card.Header> {invite.title} </Card.Header>
-                    <Card.Body>
+                    <Card.Header style={{
+                        textAlign: 'center'
+                    }}> {invite.title} </Card.Header>
+                    <Card.Body style={{
+                        textAlign: 'center'
+                    }}>
                         <Card.Text>
                             <Link className='viewInvite' to={`/invites/${invite.id}`}>View {invite.details}</Link>
                         </Card.Text>
                     </Card.Body>
-                    <Card.Footer>
-                        {/* link to all invites made by a specific user */}
-                        {/* <span>Accept:</span><Link to={`/invites/${host.id}`}>{invite.accepted}</Link> */}
-                    </Card.Footer>
-                    
                 </Card>
             )
         })

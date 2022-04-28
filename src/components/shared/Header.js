@@ -8,14 +8,15 @@ const linkStyle = {
 }
 const authenticatedOptions = (
 	<>
-		<Nav.Link>
+		{/* moved the invite link to each profile */}
+		{/* <Nav.Item className="m-2">
+		    <Link to='addInvite' style={linkStyle}>Add Invite</Link>
+        </Nav.Item> */}
+		<Nav.Item className="m-2">
 			<Link to='/invites' style={linkStyle}>
 				Scheduled Playdates
 			</Link>
-		</Nav.Link>
-		<Nav.Item className="m-2">
-		    <Link to='addInvite' style={linkStyle}>Add Invite</Link>
-        </Nav.Item>
+		</Nav.Item>
 		<Nav.Item className="m-2">
 			<Link  to='/profiles' style={linkStyle}>All Profiles</Link>
 		</Nav.Item>

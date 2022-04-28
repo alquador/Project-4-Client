@@ -50,15 +50,21 @@ const IndexProfiles = (props) => {
         profileCards = profiles.map(profile => {
             return (
                 <Card key={profile._id} style={{width: '30%' }} className="m-2 shadow p-3 mb-5 bg-body rounded">
-                    <Card.Header>Age: {profile.age} </Card.Header>
-                    <Card.Body>
+                    <Card.Header style={{
+                        textAlign: 'center'
+                    }}>Age: {profile.age} </Card.Header>
+                    <Card.Body style={{
+                        textAlign: 'center'
+                    }}>
                         <Card.Text>
                             <Link className='viewProfile' to={`/profiles/${profile.id}`}>View {profile.name}</Link>
                         </Card.Text>
                     </Card.Body>
-                    <Card.Footer>
+                    <Card.Footer style={{
+                        textAlign: 'center'
+                    }}>
                         {/* link to create an invite */}
-                        <span>Send Invite To: </span>
+                        <span>Schedule Playdate with: </span>
                             <Link className="invite" to={`/addInvite/`}>{profile.name}</Link>
                     </Card.Footer>
                 </Card>
