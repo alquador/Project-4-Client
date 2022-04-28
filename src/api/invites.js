@@ -1,5 +1,6 @@
 import apiUrl from '../apiConfig'
 import axios from 'axios'
+import ProfileForm from '../components/shared/ProfileForm'
 
 // index function
 export const getAllInvites = (user) => {
@@ -48,12 +49,22 @@ export const createInvite = (user, newInvite) => {
     console.log('user', user)
     console.log('this is newInvite', newInvite)
     return axios({
-        url: `${apiUrl}/invites/`,
+        url: `${apiUrl}/invites/create/`,
         method: 'POST',
         headers: {
             Authorization: `Token ${user.token}`
         },
-        data: { invite: newInvite }
+        data: { 
+            invite: {
+            title: newInvite.title,
+            date: newInvite.date,
+            time: newInvite.time,
+            location: newInvite.location,
+            details: newInvite.details,
+            // accepted: newInvite.accepted,
+            host: user.id,
+            friend_id: 2
+          } }
     })
 }
 
@@ -74,8 +85,9 @@ export const updateInvite = (user, updatedInvite) => {
 // DELETE -> remove function
 export const removeInvite = (user, inviteId) => {
     console.log('user', user)
+    console.log('invite id in delete route', inviteId)
     return axios({
-        url: `${apiUrl}/invites/${inviteId}/`,
+        url: `${apiUrl}/invites/${inviteId}/delete/`,
         method: 'DELETE',
         headers: {
             Authorization: `Token ${user.token}`

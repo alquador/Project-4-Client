@@ -10,7 +10,7 @@ const CreateProfile = (props) => {
     const navigate = useNavigate()
     // we'll need two states
     const [profile, setProfile] = useState({name: '', age: '', aboutMe: ''})
-    console.log('profile in create', profile)
+    //console.log('profile in create', profile)
 
     const handleChange = (e) => {
         // e === event
@@ -25,8 +25,8 @@ const CreateProfile = (props) => {
             } 
             const updatedValue = { [name]: value }
 
-            //console.log('prevProfile', prevProfile)
-            //console.log('updatedValue', updatedValue)
+            console.log('prevProfile', prevProfile)
+            console.log('updatedValue', updatedValue)
 
             return {...prevProfile, ...updatedValue}
         })

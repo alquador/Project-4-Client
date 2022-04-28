@@ -44,17 +44,22 @@ export const getOneProfile = (user, profileId) => {
 }
 
 // POST -> create function
-export const createProfile = (user, newProfile) => {
+export const createProfile = (user, newProfile, newProfileId) => {
     console.log('user', user)
     console.log('this is newProfile', newProfile)
+    console.log('this is newProfile', newProfileId)
     return axios({
         url: `${apiUrl}/profiles/create/`,
         method: 'POST',
         headers: {
             Authorization: `Token ${user.token}`
         },
-        data: { profile: newProfile }
-    })
+        data: { profile: {
+            name: newProfile.name,
+            age: newProfile.age,
+            about_me: newProfile.aboutMe,
+         }
+    }})
 }
 
 // PATCH -> update function
@@ -75,7 +80,7 @@ export const updateProfile = (user, updatedProfile) => {
 export const removeProfile = (user, profileId) => {
     console.log('user', user)
     return axios({
-        url: `${apiUrl}/profiles/${profileId}/`,
+        url: `${apiUrl}/profiles/${profileId}/delete/`,
         method: 'DELETE',
         headers: {
             Authorization: `Token ${user.token}`

@@ -35,8 +35,8 @@ const ShowInvite = (props) => {
 
     //delete an invite
     const removeTheInvite = () => {
-        removeInvite(user, invite._id)
-            .then(() => {navigate(`/invites`)})
+        removeInvite(user, id)
+            .then(() => {navigate(`/invites/`)})
             .catch(console.error)
     }
 

@@ -17,13 +17,13 @@ const CreateInvite = (props) => {
         e.persist()
         //set Invite to the new values returned by the input fields
         setInvite(prevInvite => {
-            const title = e.target.title
+            const name = e.target.name
             let value = e.target.value
             //console.log('etarget type', e.target.type)
             if (e.target.type === 'number') {
                 value = parseInt(e.target.value)
             } 
-            const updatedValue = { [title]: value }
+            const updatedValue = { [name]: value }
 
             //console.log('prevProfile', prevProfile)
             //console.log('updatedValue', updatedValue)
@@ -38,7 +38,7 @@ const CreateInvite = (props) => {
         //api call to create a new invite
         createInvite(user, invite)
             // if create is successful, we should navigate to the show page
-            .then(res => {navigate(`/invites/${res.data.invite._id}/`)})
+            .then(res => {navigate(`/invites/${res.data.invite.id}/`)})
             // if there is an error, we'll send an error message
             .catch(() =>
                 msgAlert({
