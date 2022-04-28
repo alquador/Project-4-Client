@@ -2,10 +2,6 @@ import React, { useState, useEffect } from 'react'
 import { getAllProfiles } from '../../api/profiles'
 import { Card } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
-// import { Route } from 'react-router-dom'
-// import { v4 as uuid } from 'uuid'
-// import RequireAuth from './components/shared/RequireAuth'
-// import CreateInvite from './components/invites/CreateInvite'
 
 
 // use basic CSS, but we have to use JS syntax
@@ -63,13 +59,7 @@ const IndexProfiles = (props) => {
                     <Card.Footer>
                         {/* link to create an invite */}
                         <span>Send Invite To: </span>
-                        {/* <Route
-				            path='/addInvite'
-				            element={
-					            <RequireAuth user={user}>	
-						            <CreateInvite msgAlert={msgAlert} user={user} />
-					            </RequireAuth>}
-			/> */}
+                            <Link className="invite" to={`/addInvite/`}>{profile.name}</Link>
                     </Card.Footer>
                 </Card>
             )
