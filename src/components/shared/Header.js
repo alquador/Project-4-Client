@@ -10,7 +10,7 @@ const authenticatedOptions = (
 	<>
 		<Nav.Link>
 			<Link to='/invites' style={linkStyle}>
-				Playdate Invites
+				Scheduled Playdates
 			</Link>
 		</Nav.Link>
 		<Nav.Item className="m-2">

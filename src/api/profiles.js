@@ -57,7 +57,7 @@ export const createProfile = (user, newProfile, newProfileId) => {
         data: { profile: {
             name: newProfile.name,
             age: newProfile.age,
-            about_me: newProfile.aboutMe,
+            about_me: newProfile.aboutMe
          }
     }})
 }

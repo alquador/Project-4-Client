@@ -80,7 +80,10 @@ const IndexProfiles = (props) => {
     return (
         <>
         <br></br>
-            <div className= 'title'><h1>All Profiles</h1></div>
+            <div className= 'title'>
+                <h1 style={{
+                    textAlign: 'center'
+                }}>All Profiles</h1></div>
             <div style={cardContainerLayout}>
                 {profileCards}
             </div>

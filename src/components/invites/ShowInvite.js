@@ -51,6 +51,7 @@ const ShowInvite = (props) => {
         )
     }
 
+    // if (invite.host_id === user.id || invite.friend_id === user.id){
         return (
             <>
             <Container className="fluid" id="showContainer">
@@ -84,8 +85,9 @@ const ShowInvite = (props) => {
                                     <small>Playdate Friend: {invite.friend_id} </small><br/>
                                 </Col>
                         </Card.Text>
-                        
+                    
                     </Card.Body>
+                    
                     {/* if the user owns this profile allow them to edit, or delete it */}
                     {invite.host_id === user.id && 
                     <Card.Footer>
@@ -96,7 +98,7 @@ const ShowInvite = (props) => {
                             <Button className="m-2" variant="danger" onClick={removeTheInvite}>
                                 Delete Invite
                             </Button>
-    
+                    
                     </Card.Footer>                        
                     }
                 </Card>

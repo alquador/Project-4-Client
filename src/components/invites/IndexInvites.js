@@ -28,6 +28,7 @@ const IndexInvites = (props) => {
 
     
     //loading screen while api call happens
+    //or there are no invites 
     if (!invites) {
         return <p>loading...</p>
     } else if (invites.length === 0) {
@@ -35,11 +36,15 @@ const IndexInvites = (props) => {
     }
 
     let inviteCards
-
+    // if invites are true
     if (invites) {
         inviteCards = invites.map(invite => {
+            // show only invites that belong to the logged in user
+            if (invite.host_id === user.id || invite.friend_id === user.id) 
             return (
+                
                 <Card key={invite._id} style={{width: '30%' }} className="m-2 shadow p-3 mb-5 bg-body rounded">
+                    
                     <Card.Header> {invite.title} </Card.Header>
                     <Card.Body>
                         <Card.Text>
@@ -50,6 +55,7 @@ const IndexInvites = (props) => {
                         {/* link to all invites made by a specific user */}
                         {/* <span>Accept:</span><Link to={`/invites/${host.id}`}>{invite.accepted}</Link> */}
                     </Card.Footer>
+                    
                 </Card>
             )
         })
@@ -59,7 +65,10 @@ const IndexInvites = (props) => {
     return (
         <>
         <br></br>
-            <div className= 'title'><h1>All Invites</h1></div>
+            <div className= 'title'>
+                <h1 style={{
+                    textAlign: 'center'
+                }}>Scheduled Playdates</h1></div>
             <div style={cardContainerLayout}>
                 {inviteCards}
             </div>

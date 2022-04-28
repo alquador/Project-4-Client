@@ -52,7 +52,7 @@ const ProfileForm = (props) => {
                         textAlign: 'center'
                     }} 
                     placeholder="Tell us a little bit about the child?"
-                    value={profile.about_me}
+                    value={profile.aboutMe}
                     name='aboutMe'
                     onChange={handleChange}
                 />
