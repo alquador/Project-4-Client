@@ -26,8 +26,8 @@ const MyProfiles = (props) => {
 	// }
 
     useEffect(() => {
-        //api call to get all profiles
-        // console.log('user in useEffect console firing', user)
+        //api call to get all profiles of the user
+        console.log('My profiles user', user)
         getMyProfiles(user)
             .then(res => {
                 console.log(res.data.profiles)

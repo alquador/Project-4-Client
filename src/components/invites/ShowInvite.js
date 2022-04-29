@@ -3,6 +3,7 @@ import { getOneInvite, removeInvite, updateInvite } from '../../api/invites'
 import { useParams, useNavigate } from 'react-router-dom'
 import { Spinner, Container, Card, Button, Row, Col } from 'react-bootstrap'
 import EditInviteModal from './EditInviteModal'
+import IndexProfiles from '../profiles/IndexProfiles'
 
 
 const ShowInvite = (props) => {
@@ -93,16 +94,16 @@ const ShowInvite = (props) => {
                     </Card.Body>
                     
                     {/* if the user owns this profile allow them to edit, or delete it */}
-                    {invite.host_id === user.id && 
+                    {user.id === invite.host_id || invite.friend_id &&
                     <Card.Footer style={{
                         textAlign: 'center'
                     }}>
 
-                            <Button onClick={() => setModalOpen(true)} className="m-2" variant="warning">
-                                Edit Invite
+                            <Button onClick={() => setModalOpen(true)} className="m-2" variant="success">
+                                Accept Invite
                             </Button>
                             <Button className="m-2" variant="danger" onClick={removeTheInvite}>
-                                Delete Invite
+                                Decline Invite
                             </Button>
                     
                     </Card.Footer>                        

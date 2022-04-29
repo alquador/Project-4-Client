@@ -51,7 +51,7 @@ const EditInviteModal = (props) => {
                     invite={invite}
                     handleChange={handleChange}
                     handleSubmit={handleSubmit}
-                    heading="Edit invite!"
+                    heading="Accept invite!"
                 />
             </Modal.Body>
         </Modal>
