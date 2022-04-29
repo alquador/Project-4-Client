@@ -111,7 +111,7 @@ const ShowInvite = (props) => {
                 </Card>
             </Container>
   
-            {/* a pop up to edit the invite */}
+            {/* a pop up to accept or decline the invite */}
             <EditInviteModal 
             invite = {invite}
             show={modalOpen}

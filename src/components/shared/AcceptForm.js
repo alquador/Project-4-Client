@@ -15,7 +15,7 @@ const InviteForm = (props) => {
             <h1>{heading}</h1>
             <br></br>
             <Form onSubmit={handleSubmit} className="m-2 p-5 w-100 shadow bg-body rounded">
-            {/* <div style={{
+            <div style={{
                     display: 'flex',
                     justifyContent: 'center',
                     textAlign: 'left'
@@ -29,7 +29,7 @@ const InviteForm = (props) => {
                         />
                     </div>
                 ))}
-                </div> */}
+                </div>
             <Col>
                 <Form.Label>Playdate: </Form.Label>
                 <Form.Control 

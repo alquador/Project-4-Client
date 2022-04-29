@@ -14,14 +14,15 @@ export const getAllInvites = (user) => {
     })
 }
 
-// index of user's invites function
-export const getMyInvites = (user) => {
+// index of user's Accepted invites function
+export const acceptInvites = (user, updatedInvite) => {
     return axios({
-        url: `${apiUrl}/invites/mine/`,
-        method: 'GET',
+        url: `${apiUrl}/invites/${updatedInvite.id}/accept/`,
+        method: 'PATCH',
         headers: {
             Authorization: `Token ${user.token}`
-        }
+        },
+        data: { invite: updatedInvite }
     })
 }
 

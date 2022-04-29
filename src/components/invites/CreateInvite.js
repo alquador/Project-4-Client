@@ -38,7 +38,10 @@ const CreateInvite = (props) => {
         //api call to create a new invite
         createInvite(user, invite)
             // if create is successful, we should navigate to the show page
-            .then(res => {navigate(`/invites/${res.data.invite.id}/`)})
+            // .then(res => {navigate(`/invites/${res.data.invite.id}/`)})
+            // actually let's navigate to the scheduled invites index page
+            // the host can see the invites and the friend can then accept invite
+            .then(res => {navigate(`/invites/`)})
             // if there is an error, we'll send an error message
             .catch(() =>
                 msgAlert({
