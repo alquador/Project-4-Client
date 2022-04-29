@@ -20,10 +20,10 @@ const Home = (props) => {
 			}}>
 			<h2 style={{
 				textAlign:'center'
-			}}>The PlaydateApp</h2>
+			}}>Come join in on the fun! </h2>
 			<h4 style={{
 				textAlign:'center'
-			}}>Come join in on the fun! Sign up/Sign in to invite a friend to meet!</h4>
+			}}>Sign up/Sign in to invite a friend to meet!</h4>
 			</div>
 		</>
 	)

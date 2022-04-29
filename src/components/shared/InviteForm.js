@@ -30,6 +30,7 @@ const InviteForm = (props) => {
                 </Col>
             <Row>
                 <Col>
+                <br></br>
                     <Form.Label>Date: </Form.Label>
                     <Form.Control 
                         style={{
@@ -44,6 +45,7 @@ const InviteForm = (props) => {
                 />
                 </Col>
                 <Col>
+                <br></br>
                     <Form.Label>Time: </Form.Label>
                     <Form.Control
                         style={{
@@ -58,6 +60,7 @@ const InviteForm = (props) => {
                 />
                 </Col>
             </Row>
+            <br></br>
                 <Form.Label>Location: </Form.Label>
                 <Form.Control
                     style={{
