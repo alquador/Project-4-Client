@@ -48,7 +48,7 @@ const MyProfiles = (props) => {
 
     if (profiles) {
         profileCards = profiles.map(profile => {
-            if (profiles.user_id === user.id)
+            // if (profiles.user_id === user.id)
             return (
                 <Card key={profile._id} style={{width: '30%' }} className="m-2 shadow p-3 mb-5 bg-body rounded">
                     <Card.Header style={{

@@ -94,7 +94,7 @@ const ShowInvite = (props) => {
                     </Card.Body>
                     
                     {/* if the user owns this profile allow them to edit, or delete it */}
-                    {user.id === invite.host_id || invite.friend_id &&
+                    {/* {user.id === invite.host_id || invite.friend_id && */}
                     <Card.Footer style={{
                         textAlign: 'center'
                     }}>
@@ -107,7 +107,7 @@ const ShowInvite = (props) => {
                             </Button>
                     
                     </Card.Footer>                        
-                    }
+                    
                 </Card>
             </Container>
   

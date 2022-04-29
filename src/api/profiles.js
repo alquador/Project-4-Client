@@ -16,7 +16,7 @@ export const getAllProfiles = (user) => {
 // index of user's profiles function
 export const getMyProfiles = (user) => {
     return axios({
-        url: `${apiUrl}/profiles/mine`,
+        url: `${apiUrl}/profiles/mine/`,
         method: 'GET',
         headers: {
             Authorization: `Token ${user.token}`
