@@ -86,7 +86,7 @@ const InviteForm = (props) => {
                     justifyContent: 'center',
                     textAlign: 'left'
                 }}>
-                {['checkbox'].map((type) => (
+                {/* {['checkbox'].map((type) => (
                     <div key={`default-${type}`} className="mb-3">
                         <Form.Check 
                             type={type}
@@ -94,7 +94,7 @@ const InviteForm = (props) => {
                             label={`Accept Invite`}
                         />
                     </div>
-                ))}
+                ))} */}
                 </div>
                 <Button type='submit'>Submit</Button>
             </Form>

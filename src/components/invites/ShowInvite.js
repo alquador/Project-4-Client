@@ -51,7 +51,7 @@ const ShowInvite = (props) => {
         )
     }
 
-     if (user.id === invite.friend_id || invite.host_id === user.id)
+    //  if (user.id === invite.friend_id || invite.host_id === user.id)
         return (
             <>
             <Container className="fluid" id="showContainer">
