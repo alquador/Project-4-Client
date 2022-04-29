@@ -9,7 +9,7 @@ const CreateProfile = (props) => {
     // console.log('user in create', user)
     const navigate = useNavigate()
     // we'll need two states
-    const [profile, setProfile] = useState({name: '', age: '', aboutMe: ''})
+    const [profile, setProfile] = useState({name: '', age: '', about_me: ''})
     //console.log('profile in create', profile)
 
     const handleChange = (e) => {
@@ -38,7 +38,7 @@ const CreateProfile = (props) => {
         //api call to create a new profile
         createProfile(user, profile)
             // if create is successful, we should navigate to the show page
-            .then(res => {navigate(`/profiles/${res.data.profile._id}/`)})
+            .then(res => {navigate(`/profiles/${res.data.profile.id}/`)})
             // if there is an error, we'll send an error message
             .catch(() =>
                 msgAlert({
