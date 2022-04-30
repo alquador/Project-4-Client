@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import {Modal} from 'react-bootstrap'
-import InviteForm from '../shared/InviteForm'
+import AcceptForm from '../shared/AcceptForm'
 
-const EditInviteModal = (props) => {
+const AcceptInviteModal = (props) => {
     const { user, show, handleClose, updateInvite, triggerRefresh } = props
     const [invite, setInvite] = useState(props.invite)
     console.log('props.invite in edit invite modal', props.invite)
@@ -47,15 +47,15 @@ const EditInviteModal = (props) => {
         <Modal show={show} onHide={handleClose}>
             <Modal.Header closeButton></Modal.Header>
             <Modal.Body>
-                <InviteForm 
+                <AcceptForm 
                     invite={invite}
                     handleChange={handleChange}
                     handleSubmit={handleSubmit}
-                    heading="Edit invite!"
+                    heading="Accept invite!"
                 />
             </Modal.Body>
         </Modal>
     )
 }
     
-export default EditInviteModal
+export default AcceptInviteModal

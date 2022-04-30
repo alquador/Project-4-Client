@@ -1,6 +1,6 @@
 import { Form, Container, Button, Row, Col } from 'react-bootstrap'
 
-const InviteForm = (props) => {
+const AcceptForm = (props) => {
     const {invite, handleChange, handleSubmit, heading} = props
     //console.log('invite in invite form', invite)
     //console.log('props in invite form', props)
@@ -30,76 +30,6 @@ const InviteForm = (props) => {
                     </div>
                 ))}
                 </div>
-            <Col>
-                <Form.Label>Playdate: </Form.Label>
-                <Form.Control 
-                    style={{
-                        width: '100%',
-                        textAlign: 'center'
-                    }}
-                    placeholder="What Is The Title Of The Playdate?"
-                    value={invite.title}
-                    name='title'
-                    onChange={handleChange}
-                />
-                </Col>
-            <Row>
-                <Col>
-                <br></br>
-                    <Form.Label>Date: </Form.Label>
-                    <Form.Control 
-                        style={{
-                            width: '100%',
-                            textAlign: 'center'
-                        }}
-                        placeholder="When is the playdate? (YYYY-MM-DD)"
-                        value={invite.date}
-                        name='date'
-                        type="date"
-                        onChange={handleChange}
-                />
-                </Col>
-                <Col>
-                <br></br>
-                    <Form.Label>Time: </Form.Label>
-                    <Form.Control
-                        style={{
-                        width: '100%',
-                        textAlign: 'center'
-                     }} 
-                        placeholder="What time?"
-                        value={invite.time}
-                        name='time'
-                        type="time"
-                        onChange={handleChange}
-                />
-                </Col>
-            </Row>
-            <br></br>
-                <Form.Label>Location: </Form.Label>
-                <Form.Control
-                    style={{
-                        width: '100%',
-                        textAlign: 'center'
-                    }} 
-                    placeholder="Where is the playdate?"
-                    value={invite.location}
-                    name='location'
-                    onChange={handleChange}
-                />
-                <br></br>
-                <Form.Label>Details: </Form.Label>
-                <Form.Control
-                    style={{
-                        width: '100%',
-                        textAlign: 'center'
-                    }} 
-                    placeholder="Details of the playdate?"
-                    value={invite.details}
-                    name='details'
-                    onChange={handleChange}
-                />
-                <br></br>
 
                 <Button type='submit'>Submit</Button>
             </Form>
@@ -107,4 +37,4 @@ const InviteForm = (props) => {
     )
 }
 
-export default InviteForm
+export default AcceptForm

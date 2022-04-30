@@ -4,6 +4,7 @@ import { useParams, useNavigate } from 'react-router-dom'
 import { Spinner, Container, Card, Button, Row, Col } from 'react-bootstrap'
 import EditInviteModal from './EditInviteModal'
 import IndexProfiles from '../profiles/IndexProfiles'
+import AcceptInviteModal from './AcceptInviteModal'
 
 
 const ShowInvite = (props) => {
@@ -98,20 +99,31 @@ const ShowInvite = (props) => {
                     <Card.Footer style={{
                         textAlign: 'center'
                     }}>
-
                             <Button onClick={() => setModalOpen(true)} className="m-2" variant="success">
                                 Accept Invite
                             </Button>
                             <Button className="m-2" variant="danger" onClick={removeTheInvite}>
                                 Decline Invite
                             </Button>
-                    
+                            {user.id === invite.host_id &&
+                            <Button onClick={() => setModalOpen(true)} className="m-2" variant="warning">
+                                Edit Invite
+                            </Button>
+                            }
                     </Card.Footer>                        
                     
                 </Card>
             </Container>
   
-            {/* a pop up to accept or decline the invite */}
+            {/* a pop up to accept the invite */}
+            <AcceptInviteModal 
+            invite = {invite}
+            show={modalOpen}
+            user={user}
+            triggerRefresh={() => setUpdated(prev => !prev)}
+            updateInvite={updateInvite}
+            handleClose={() => setModalOpen(false)}
+            />
             <EditInviteModal 
             invite = {invite}
             show={modalOpen}

@@ -40,7 +40,8 @@ const IndexInvites = (props) => {
     if (invites) {
         inviteCards = invites.map(invite => {
             // show only invites that belong to the logged in user
-            if (invite.host_id === user.id || invite.friend_id === user.id) 
+            if (invite.host_id === user.id || invite.friend_id === user.id)
+            if (invite.accepted === false) 
             return (
                 
                 <Card key={invite._id} style={{width: '30%' }} className="m-2 shadow p-3 mb-5 bg-body rounded">
