@@ -26,10 +26,18 @@ export const getAcceptedInvites = (user) => {
     })
 }
 
-//index of a specific user's invites function
-export const getOwnerInvites = (ownerId) => {
-    return axios(`${apiUrl}/invites/user/${ownerId}/`)
+// SHOW of user's Accepted invites function
+export const getOneAcceptedInvite = (user, inviteId) => {
+    console.log('user in get ACCEPTED invites', user)
+    return axios({
+        url: `${apiUrl}/invites/accepted/${inviteId}/`,
+        method: 'GET',
+        headers: {
+            Authorization: `Token ${user.token}`
+        }
+    })
 }
+
 
 //show function
 export const getOneInvite = (user, inviteId) => {

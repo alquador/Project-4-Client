@@ -40,6 +40,7 @@ const AcceptedInvites = (props) => {
     if (invites) {
         inviteCards = invites.map(invite => {
             // show only invites that were accepted
+            if (invite.host_id === user.id || invite.friend_id === user.id)
             if (invite.accepted === true) 
             return (
                 
@@ -52,7 +53,7 @@ const AcceptedInvites = (props) => {
                         textAlign: 'center'
                     }}>
                         <Card.Text>
-                            <Link className='viewInvite' to={`/invites/${invite.id}`}>View {invite.details}</Link>
+                            <Link className='viewInvite' to={`/invites/accepted/${invite.id}`}>View {invite.details}</Link>
                         </Card.Text>
                     </Card.Body>
                 </Card>
