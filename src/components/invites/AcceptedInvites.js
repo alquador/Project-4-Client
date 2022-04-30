@@ -39,8 +39,8 @@ const AcceptedInvites = (props) => {
     // if invites are true
     if (invites) {
         inviteCards = invites.map(invite => {
-            // show only invites that belong to the logged in user
-             
+            // show only invites that were accepted
+            if (invite.accepted === true) 
             return (
                 
                 <Card key={invite._id} style={{width: '30%' }} className="m-2 shadow p-3 mb-5 bg-body rounded">
