@@ -62,9 +62,9 @@ export const createInvite = (user, newInvite) => {
             time: newInvite.time,
             location: newInvite.location,
             details: newInvite.details,
-            // accepted: newInvite.accepted,
+            accepted: false,
             host: user.id,
-            friend_id: 2
+            friend_id: 3
           } }
     })
 }

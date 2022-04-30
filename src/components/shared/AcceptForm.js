@@ -5,7 +5,7 @@ const AcceptForm = (props) => {
     //console.log('invite in invite form', invite)
     //console.log('props in invite form', props)
     return (
-        <Container className="justify-content-center" style={{
+        <Container name="accept" className="justify-content-center" style={{
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'center',

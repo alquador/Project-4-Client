@@ -11,6 +11,7 @@ const ShowInvite = (props) => {
 // setting state here
     const [invite, setInvite] = useState(null)
     const [modalOpen, setModalOpen] = useState(false)
+    const [acceptModalOpen, setAcceptModalOpen] = useState(false)
     const [updated, setUpdated] = useState(false)
     const navigate = useNavigate()
 
@@ -53,7 +54,7 @@ const ShowInvite = (props) => {
         )
     }
 
-    //  if (user.id === invite.friend_id || invite.host_id === user.id)
+     if (user.id === invite.friend_id || invite.host_id === user.id)
         return (
             <>
             <Container className="fluid" id="showContainer">
@@ -99,7 +100,7 @@ const ShowInvite = (props) => {
                     <Card.Footer style={{
                         textAlign: 'center'
                     }}>
-                            <Button onClick={() => setModalOpen(true)} className="m-2" variant="success">
+                            <Button onClick={() => setAcceptModalOpen(true)} className="m-2" variant="success">
                                 Accept Invite
                             </Button>
                             <Button className="m-2" variant="danger" onClick={removeTheInvite}>
@@ -118,13 +119,13 @@ const ShowInvite = (props) => {
             {/* a pop up to accept the invite */}
             <AcceptInviteModal 
             invite = {invite}
-            show={modalOpen}
+            show={acceptModalOpen}
             user={user}
             triggerRefresh={() => setUpdated(prev => !prev)}
             updateInvite={updateInvite}
-            handleClose={() => setModalOpen(false)}
+            handleClose={() => setAcceptModalOpen(false)}
             />
-            <EditInviteModal 
+            <EditInviteModal
             invite = {invite}
             show={modalOpen}
             user={user}
