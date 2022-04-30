@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
 import {Modal} from 'react-bootstrap'
 import AcceptForm from '../shared/AcceptForm'
-
+import { useNavigate } from 'react-router-dom'
 
 const AcceptInviteModal = (props) => {
     const { user, show, handleClose, updateInvite, triggerRefresh } = props
     const [invite, setInvite] = useState(props.invite)
+    const navigate = useNavigate()
     console.log('props.invite in edit accepted invite modal', props.invite)
     const handleChange = (e) => {
         // e === event
@@ -40,9 +41,10 @@ const AcceptInviteModal = (props) => {
         console.log('the edited invite to submit', invite)
         //api call to update a invite
         updateInvite(user, invite)
-            // if create is successful, we should navigate to the show page
+            // if create is successful, we should navigate to the index of accepted invites
             .then(() => handleClose())
-            .then(() => triggerRefresh())
+            // .then(() => triggerRefresh())
+            .then(res => {navigate(`/invites/accepted/`)})
             .catch(console.error)
         console.log('this is the invte after api call', invite)
     }
