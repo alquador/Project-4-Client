@@ -15,6 +15,11 @@ const EditInviteModal = (props) => {
             let value = e.target.value
             console.log('etarget type', e.target.type)
             console.log('this is e.target checked', e.target.checked)
+            if(name === "accepted" && e.target.checked){
+                value = true
+            } else if (name === "accepted" && !e.target.checked){
+                value = false
+            }
             if (e.target.type === 'number') {
                 value = parseFloat(e.target.value)
             }

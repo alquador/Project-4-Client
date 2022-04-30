@@ -20,6 +20,11 @@ const CreateInvite = (props) => {
             const name = e.target.name
             let value = e.target.value
             //console.log('etarget type', e.target.type)
+            if(name === "accepted" && e.target.checked){
+                value = true
+            } else if (name === "accepted" && !e.target.checked){
+                value = false
+            }
             if (e.target.type === 'number') {
                 value = parseInt(e.target.value)
             } 

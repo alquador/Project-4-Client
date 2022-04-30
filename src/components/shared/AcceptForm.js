@@ -20,17 +20,14 @@ const AcceptForm = (props) => {
                     justifyContent: 'center',
                     textAlign: 'left'
                 }}>
-                {['checkbox'].map((type) => (
-                    <div key={`default-${type}`} className="mb-3">
-                        <Form.Check 
-                            type={type}
-                            id={invite.accepted}
-                            label={`Accept Invite`}
-                        />
-                    </div>
-                ))}
+                    <Form.Check 
+                    label='We will be there!'
+                    name='accepted'
+                    defaultChecked={invite.accepted}
+                    onChange={handleChange}
+                />
                 </div>
-
+                <br></br>
                 <Button type='submit'>Submit</Button>
             </Form>
         </Container>

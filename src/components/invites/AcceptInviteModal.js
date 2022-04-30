@@ -6,7 +6,7 @@ import AcceptForm from '../shared/AcceptForm'
 const AcceptInviteModal = (props) => {
     const { user, show, handleClose, updateInvite, triggerRefresh } = props
     const [invite, setInvite] = useState(props.invite)
-    console.log('props.invite in edit invite modal', props.invite)
+    console.log('props.invite in edit accepted invite modal', props.invite)
     const handleChange = (e) => {
         // e === event
         e.persist()
