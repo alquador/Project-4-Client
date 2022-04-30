@@ -14,6 +14,11 @@ const authenticatedOptions = (
         </Nav.Item> */}
 		<Nav.Item className="m-2">
 			<Link to='/invites' style={linkStyle}>
+				Playdate Invites
+			</Link>
+		</Nav.Item>
+		<Nav.Item className="m-2">
+			<Link to='/invites/accepted' style={linkStyle}>
 				Scheduled Playdates
 			</Link>
 		</Nav.Item>

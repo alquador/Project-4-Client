@@ -18,8 +18,10 @@ import MyProfiles from './components/profiles/MyProfiles'
 import IndexProfiles from './components/profiles/IndexProfiles'
 import OwnersProfiles from './components/profiles/OwnersProfiles'
 import IndexInvites from './components/invites/IndexInvites'
+import AcceptedInvites from './components/invites/AcceptedInvites'
 import ShowInvite from './components/invites/ShowInvite'
 import CreateInvite from './components/invites/CreateInvite'
+
 
 const App = () => {
 
@@ -104,7 +106,11 @@ const App = () => {
 			<Route 
 				path='/invites' 
 				element={<IndexInvites msgAlert={msgAlert} user={user} />} 
+			/>
 
+			<Route 
+				path='/invites/accepted' 
+				element={<AcceptedInvites msgAlert={msgAlert} user={user} />} 
 			/>
 			<Route
 				path='/invites/:id'
