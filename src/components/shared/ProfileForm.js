@@ -42,9 +42,9 @@ const ProfileForm = (props) => {
                     type="number"
                     onChange={handleChange}
                 />
-                
                 </Col>
             </Row>
+            <br></br>
                 <Form.Label>About Me: </Form.Label>
                 <Form.Control
                     style={{
@@ -56,7 +56,7 @@ const ProfileForm = (props) => {
                     name='about_me'
                     onChange={handleChange}
                 />
-           
+                <br></br>
                 <Button type='submit'>Submit</Button>
             </Form>
         </Container>

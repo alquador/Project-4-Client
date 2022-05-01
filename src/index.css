@@ -19,10 +19,22 @@ code {
     monospace;
 }
 Header {
-  background-color: aqua;
+  background-color: #51b8b8;
 }
 
 .bg-myBlue {
   background-color: #51b8b8;
   border-bottom: solid #0d0d0d 2px;
+}
+#sign-up {
+  background-color: #51b8b8;
+  border: none;
+  border-radius: 5px;
+  color: #0d0d0d;
+}
+#sign-in {
+  background-color: #51b8b8;
+  border: none;
+  border-radius: 5px;
+  color: #0d0d0d;
 }

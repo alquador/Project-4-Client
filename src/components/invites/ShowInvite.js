@@ -100,12 +100,16 @@ const ShowInvite = (props) => {
                     <Card.Footer style={{
                         textAlign: 'center'
                     }}>
+                            {user.id === invite.friend_id &&
                             <Button onClick={() => setAcceptModalOpen(true)} className="m-2" variant="success">
                                 Accept Invite
                             </Button>
+                            }
+                            {user.id === invite.friend_id &&
                             <Button className="m-2" variant="danger" onClick={removeTheInvite}>
                                 Decline Invite
                             </Button>
+                            }
                             {user.id === invite.host_id &&
                             <Button onClick={() => setModalOpen(true)} className="m-2" variant="warning">
                                 Edit Invite

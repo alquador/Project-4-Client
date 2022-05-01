@@ -62,7 +62,10 @@ const SignIn = (props) => {
     return (
         <div className='row'>
             <div className='col-sm-10 col-md-8 mx-auto mt-5'>
-                <h3>Sign In</h3>
+                <h3 style={{
+                    textAlign: 'center'
+                }}>Sign In</h3>
+                <br></br>
                 <Form onSubmit={onSignIn}>
                     <Form.Group controlId='email'>
                         <Form.Label>Email address</Form.Label>
@@ -75,6 +78,7 @@ const SignIn = (props) => {
                             onChange={e => setEmail(e.target.value)}
                         />
                     </Form.Group>
+                    <br></br>
                     <Form.Group controlId='password'>
                         <Form.Label>Password</Form.Label>
                         <Form.Control
@@ -86,6 +90,7 @@ const SignIn = (props) => {
                             onChange={e => setPassword(e.target.value)}
                         />
                     </Form.Group>
+                    <br></br>
                     <Button variant='primary' type='submit'>
                         Submit
                     </Button>

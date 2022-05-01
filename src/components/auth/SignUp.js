@@ -9,15 +9,6 @@ import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 
 const SignUp = (props) => {
-	// constructor(props) {
-	// 	super(props)
-
-	// 	this.state = {
-	// 		email: '',
-	// 		password: '',
-	// 		passwordConfirmation: '',
-	// 	}
-	// }    
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [passwordConfirmation, setPasswordConfirmation] = useState('')
@@ -58,7 +49,10 @@ const SignUp = (props) => {
     return (
         <div className='row'>
             <div className='col-sm-10 col-md-8 mx-auto mt-5'>
-                <h3>Sign Up</h3>
+                <h3 style={{
+                    textAlign: 'center'
+                }}>Sign Up</h3>
+                <br></br>
                 <Form onSubmit={onSignUp}>
                     <Form.Group controlId='email'>
                         <Form.Label>Email address</Form.Label>
@@ -71,6 +65,7 @@ const SignUp = (props) => {
                             onChange={e => setEmail(e.target.value)}
                         />
                     </Form.Group>
+                    <br></br>
                     <Form.Group controlId='password'>
                         <Form.Label>Password</Form.Label>
                         <Form.Control
@@ -82,6 +77,7 @@ const SignUp = (props) => {
                             onChange={e => setPassword(e.target.value)}
                         />
                     </Form.Group>
+                    <br></br>
                     <Form.Group controlId='passwordConfirmation'>
                         <Form.Label>Password Confirmation</Form.Label>
                         <Form.Control
@@ -93,6 +89,7 @@ const SignUp = (props) => {
                             onChange={e => setPasswordConfirmation(e.target.value)}
                         />
                     </Form.Group>
+                    <br></br>
                     <Button variant='primary' type='submit'>
                         Submit
                     </Button>
