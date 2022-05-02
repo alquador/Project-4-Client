@@ -80,14 +80,14 @@ const ShowInvite = (props) => {
                                     <small>Details: {invite.details} </small><br/>
                                 </Col>
                             </Row>
-                            <Row>
+                            {/* <Row>
                                 <Col>
                                     <small>Playdate Host: {invite.host_id} </small><br/>
                                 </Col>
                                 <Col>
                                     <small>Playdate Friend: {invite.friend_id} </small><br/>
                                 </Col>
-                            </Row>
+                            </Row> */}
                                 <Col>
                                     <small>Accepted: {invite.accepted} </small><br/>
                                 </Col>
