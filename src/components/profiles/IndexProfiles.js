@@ -58,7 +58,7 @@ const IndexProfiles = (props) => {
                         textAlign: 'center'
                     }}>
                         <Card.Text>
-                            <Link className='viewProfile' to={`/profiles/${profile.id}`}>View {profile.name}</Link>
+                            <Link className='viewProfile' to={`/profiles/${profile.id}`}>{profile.name}'s Profile</Link>
                         </Card.Text>
                     </Card.Body>
                     <Card.Footer style={{
@@ -66,7 +66,7 @@ const IndexProfiles = (props) => {
                     }}>
                         {/* link to create an invite */}
                         <span>Schedule Playdate with: </span>
-                            <Link className="invite" to={`/addInvite/`}>{profile.name}</Link>
+                            <Link class="link-success" className="invite" to={`/addInvite/`}>{profile.name}</Link>
                     </Card.Footer>
                 </Card>
             )

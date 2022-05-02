@@ -15,21 +15,6 @@ const InviteForm = (props) => {
             <h1>{heading}</h1>
             <br></br>
             <Form onSubmit={handleSubmit} className="m-2 p-5 w-100 shadow bg-body rounded">
-            {/* <div style={{
-                    display: 'flex',
-                    justifyContent: 'center',
-                    textAlign: 'left'
-                }}>
-                {['checkbox'].map((type) => (
-                    <div key={`default-${type}`} className="mb-3">
-                        <Form.Check 
-                            type={type}
-                            id={invite.accepted}
-                            label={`Accept Invite`}
-                        />
-                    </div>
-                ))}
-                </div> */}
             <Col>
                 <Form.Label>Playdate: </Form.Label>
                 <Form.Control 
@@ -37,7 +22,7 @@ const InviteForm = (props) => {
                         width: '100%',
                         textAlign: 'center'
                     }}
-                    placeholder="What Is The Title Of The Playdate?"
+                    placeholder={"What Is The Title Of The Playdate?"}
                     value={invite.title}
                     name='title'
                     onChange={handleChange}

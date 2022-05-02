@@ -71,8 +71,8 @@ export const createInvite = (user, newInvite) => {
             location: newInvite.location,
             details: newInvite.details,
             accepted: false,
-            host: user.id,
-            friend_id: 3
+            user_host_id: user.id,
+            friend_id: user.id
           } }
     })
 }

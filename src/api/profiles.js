@@ -23,10 +23,15 @@ export const getMyProfiles = (user) => {
         }
     })
 }
-
-//index of a specific user's profiles function
-export const getOwnerProfiles = (ownerId) => {
-    return axios(`${apiUrl}/profiles/user/${ownerId}/`)
+// index of owner's profiles function
+export const getOwnerProfiles = (user) => {
+    return axios({
+        url: `${apiUrl}/profiles/owner/`,
+        method: 'GET',
+        headers: {
+            Authorization: `Token ${user.token}`
+        }
+    })
 }
 
 //show function
@@ -57,7 +62,8 @@ export const createProfile = (user, newProfile, newProfileId) => {
         data: { profile: {
             name: newProfile.name,
             age: newProfile.age,
-            about_me: newProfile.about_me
+            about_me: newProfile.about_me,
+            // user_id: newProfile.user_id
          }
     }})
 }
