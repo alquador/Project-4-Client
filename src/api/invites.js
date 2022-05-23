@@ -72,7 +72,7 @@ export const createInvite = (user, newInvite) => {
             details: newInvite.details,
             accepted: false,
             user_host_id: user.id,
-            friend_id: 1
+            friend_id: user.id
           } }
     })
 }
